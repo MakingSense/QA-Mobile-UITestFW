@@ -9,3 +9,6 @@
 
 # Visual Studio 2015 cache/options directory
 .vs/
+
+# MacOS file system metadata
+.DS_Store
