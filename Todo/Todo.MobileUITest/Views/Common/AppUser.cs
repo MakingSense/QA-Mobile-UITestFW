@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using Todo.MobileUITest.Views.Todo;
 using Xamarin.UITest;
 
@@ -21,11 +20,11 @@ namespace Todo.MobileUITest.Views.Common
 
         private Platform GetSelectedPlatform()
         {
-            if (!Enum.TryParse(ConfigurationManager.AppSettings["platform"], true, out Platform platform))
+            if (!Enum.TryParse(System.Configuration.ConfigurationManager.AppSettings["platform"], true, out Platform platform))
             {
                 throw new Exception("A platform must be specified in App.config");
             }
-            return Platform.iOS;
+            return platform;
         }
     }
 }
