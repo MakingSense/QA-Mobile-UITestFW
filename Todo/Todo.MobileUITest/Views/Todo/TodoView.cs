@@ -6,11 +6,17 @@ namespace Todo.MobileUITest.Views.Todo
 {
     public class TodoView : BasicView
     {
-        public TodoViewLocator Locate = new TodoViewLocator();
-        public TodoView(AppUser appUser) : base(appUser) { }
+        public TodoViewLocator Locate;
+        public TodoView(AppUser appUser) : base(appUser)
+        {
+            Locate = new TodoViewLocator();
+            Locate.CreateInstance(AppUser.Platform);
+        }
 
         public TaskView TapOnCreateTask()
         {
+            App.WaitForElement(Locate.AddButton, $"Timed out waiting for element {Locate.AddButton}",
+                 TimeSpan.FromSeconds(60));
             App.Tap(Locate.AddButton);
             return new TaskView(AppUser);
         }

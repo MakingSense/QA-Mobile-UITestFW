@@ -15,7 +15,8 @@ namespace Todo
 			var toolbarItem = new ToolbarItem
 			{
 				Text = "+",
-				Icon = Device.RuntimePlatform == Device.iOS ? null : "plus.png"
+                AutomationId = "AddButton",
+                Icon = Device.RuntimePlatform == Device.iOS ? null : "plus.png"
 			};
 			toolbarItem.Clicked += async (sender, e) =>
 			{
@@ -28,6 +29,7 @@ namespace Todo
 
 			listView = new ListView
 			{
+                AutomationId = "TodoList",
 				Margin = new Thickness(20),
 				ItemTemplate = new DataTemplate(() =>
 				{
@@ -37,6 +39,7 @@ namespace Todo
 						HorizontalOptions = LayoutOptions.StartAndExpand
 					};
 					label.SetBinding(Label.TextProperty, "Name");
+                    label.AutomationId = "TodoItemName";
 
 					var tick = new Image
 					{
