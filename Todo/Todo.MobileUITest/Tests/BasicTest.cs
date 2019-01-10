@@ -4,9 +4,11 @@ using Todo.MobileUITest.Views.Common;
 namespace Todo.MobileUITest.Tests
 {
     [TestFixture]
+
     public class BasicTest : UITest
     {
         [Test]
+        [Description("Create a simple Task and verify the task exists")]
         public void CreateTaskTest()
         {
             App

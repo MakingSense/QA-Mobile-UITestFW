@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Todo.MobileUITest.Views.Common;
 using Todo.MobileUITest.Views.Todo;
 
@@ -11,7 +7,11 @@ namespace Todo.MobileUITest.Views.Task
     public class TaskView : BasicView
     {
         public TaskViewLocator Locate = new TaskViewLocator();
-        public TaskView(AppUser appUser) : base(appUser) { }
+        public TaskView(AppUser appUser) : base(appUser)
+        {
+            Locate = new TaskViewLocator();
+            Locate.CreateInstance(AppUser.Platform);
+        }
 
         public TaskView EnterTaskName(string name = "Test")
         {

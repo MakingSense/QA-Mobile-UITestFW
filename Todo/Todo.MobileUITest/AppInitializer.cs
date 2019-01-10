@@ -21,7 +21,7 @@ namespace Todo.MobileUITest
                         .StartApp();
 
                 case Platform.iOS:
-                    const string appRelativePath = "/Users/celestesenoseain/dev/Todo/Todo.iOS/bin/iPhoneSimulator/Debug/device-builds/iphone11.8-12.1/TodoiOS.app";
+                    const string appRelativePath = "/Users/celestesenoseain/dev/QA-Mobile-UITestFW/Todo/Todo.iOS/bin/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/TodoiOS.app";
                     //   var appPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, appRelativePath);
                     var appPath = appRelativePath;
 

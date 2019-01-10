@@ -9,15 +9,17 @@ namespace Todo
 			Title = "Todo Item";
 
 			var nameEntry = new Entry();
-			nameEntry.SetBinding(Entry.TextProperty, "Name");
+            nameEntry.SetBinding(Entry.TextProperty, "Name");
+            nameEntry.AutomationId = "NameField";
 
 			var notesEntry = new Entry();
-			notesEntry.SetBinding(Entry.TextProperty, "Notes");
+            notesEntry.SetBinding(Entry.TextProperty, "Notes");
+            notesEntry.AutomationId =" NotesField";
 
 			var doneSwitch = new Switch();
 			doneSwitch.SetBinding(Switch.IsToggledProperty, "Done");
 
-			var saveButton = new Button { Text = "Save" };
+			var saveButton = new Button { Text = "Save" , AutomationId = "SaveButton"};
 			saveButton.Clicked += async (sender, e) =>
 			{
 				var todoItem = (TodoItem)BindingContext;
@@ -25,7 +27,7 @@ namespace Todo
 				await Navigation.PopAsync();
 			};
 
-			var deleteButton = new Button { Text = "Delete" };
+			var deleteButton = new Button { Text = "Delete" , AutomationId = "DeleteButton"};
 			deleteButton.Clicked += async (sender, e) =>
 			{
 				var todoItem = (TodoItem)BindingContext;
@@ -33,7 +35,7 @@ namespace Todo
 				await Navigation.PopAsync();
 			};
 
-			var cancelButton = new Button { Text = "Cancel" };
+            var cancelButton = new Button { Text = "Cancel", AutomationId = "CancelButton" };
 			cancelButton.Clicked += async (sender, e) =>
 			{
 				await Navigation.PopAsync();

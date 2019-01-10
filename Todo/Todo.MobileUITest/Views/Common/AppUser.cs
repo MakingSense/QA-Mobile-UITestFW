@@ -21,10 +21,10 @@ namespace Todo.MobileUITest.Views.Common
 
         private Platform GetSelectedPlatform()
         {
-            if (!Enum.TryParse(ConfigurationManager.AppSettings["platform"], true, out Platform platform))
+           /* if (!Enum.TryParse(ConfigurationManager.AppSettings["platform"], true, out Platform platform))
             {
                 throw new Exception("A platform must be specified in App.config");
-            }
+            }*/
             return Platform.iOS;
         }
     }
