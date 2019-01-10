@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Todo.MobileUITest</RootNamespace>
     <AssemblyName>Todo.MobileUITest</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,13 +25,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="AppInitializer.cs" />
     <Compile Include="Tests\BasicTest.cs" />
     <Compile Include="Views\Common\AppUser.cs" />
@@ -44,7 +37,7 @@
     <Compile Include="Views\Todo\TodoView.cs" />
     <Compile Include="Views\Todo\TodoViewChecker.cs" />
     <Compile Include="Views\Todo\TodoViewLocator.cs" />
-  </ItemGroup>
+</ItemGroup>
   <ItemGroup>
     <PackageReference Include="NUnit">
       <Version>3.11.0</Version>
@@ -63,6 +56,25 @@
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\www.w3schools.com\tempconvert.wsdl" />
+    <None Include="Service References\www.w3schools.com\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\www.w3schools.com" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
   </ItemGroup>
 <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
