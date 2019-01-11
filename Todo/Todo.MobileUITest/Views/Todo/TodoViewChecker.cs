@@ -16,7 +16,7 @@ namespace Todo.MobileUITest.Views.Todo
             Locate.CreateInstance(AppUser.Platform);
         }
 
-        public TodoViewChecker YourRecentlyTaskIsShown(string name = "Test")
+        public TodoViewChecker YourRecentlyTaskIsShown(string name = "Buy_orange")
         {
             App.WaitForElement(Locate.TaskName, $"Timed out waiting for element {Locate.TaskName}",
                 TimeSpan.FromSeconds(60));
@@ -25,7 +25,7 @@ namespace Todo.MobileUITest.Views.Todo
             return this;
         }
 
-        public TodoViewChecker YourRecentlyTaskIsNOTShown(string name = "Test")
+        public TodoViewChecker YourRecentlyTaskIsNOTShown(string name = "Buy_orange")
         {
             App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
                 TimeSpan.FromSeconds(60));
@@ -44,5 +44,15 @@ namespace Todo.MobileUITest.Views.Todo
             Assert.IsTrue(list.Count().Equals(tasks.Count()));
             return this;
         }
+
+        public TodoViewChecker YourRecentlyTaskIsDone()
+        {
+            App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
+                TimeSpan.FromSeconds(60));
+            var appResult = App.Query(Locate.DoneTask).ToList();
+            Assert.IsTrue(appResult.Count() == 1);
+            return this;
+        }
+
     }
 }

@@ -28,12 +28,12 @@ namespace Todo.MobileUITest.Tests
             App
                 .VisitTodoView()
                 .TapOnCreateTask()
-                .EnterTaskName("Task_Name")
-                .EnterTaskNotes("Task_Notes")
+                .EnterTaskName("Buy_apples")
+                .EnterTaskNotes("Buy_apples_notes")
                 .TapOnSaveButtonAndGoToHome()
-                .TapOnPreviousTaskCreated("Task_Name")
+                .TapOnPreviousTaskCreated("Buy_apples")
                 .TapOnDeleteButtonAndGoToHome()
-                .Verify().YourRecentlyTaskIsNOTShown("Task_Name");
+                .Verify().YourRecentlyTaskIsNOTShown("Buy_apples");
         }
 
         [Test]
@@ -43,18 +43,32 @@ namespace Todo.MobileUITest.Tests
             App
                 .VisitTodoView()
                 .TapOnCreateTask()
-                .EnterTaskName("Task_1")
-                .EnterTaskNotes("Task_Notes_1")
+                .EnterTaskName("Buy_orange")
+                .EnterTaskNotes("Buy_orange_notes")
                 .TapOnSaveButtonAndGoToHome()
                 .TapOnCreateTask()
-                .EnterTaskName("Task_2")
-                .EnterTaskNotes("Task_Notes_2")
+                .EnterTaskName("Buy_apples")
+                .EnterTaskNotes("Buy_apples_notes")
                 .TapOnSaveButtonAndGoToHome()
                 .TapOnCreateTask()
-                .EnterTaskName("Task_3")
-                .EnterTaskNotes("Task_Notes_3")
+                .EnterTaskName("Buy_milk")
+                .EnterTaskNotes("Buy_milk_notes")
                 .TapOnSaveButtonAndGoToHome()
-                .Verify().YourAllRecentlyTasksAreShown(new List<string> { "Task_1", "Task_2", "Task_3" });
+                .Verify().YourAllRecentlyTasksAreShown(new List<string> { "Buy_orange", "Buy_apples", "Buy_milk" });
+        }
+
+        [Test]
+        [Description("Create a simple Task with DONE status and verify")]
+        public void CreateTaskDoneTest()
+        {
+            App
+                .VisitTodoView()
+                .TapOnCreateTask()
+                .EnterTaskName()
+                .EnterTaskNotes()
+                .SwitchOnDone()
+                .TapOnSaveButtonAndGoToHome()
+                .Verify().YourRecentlyTaskIsDone();
         }
     }
 }
