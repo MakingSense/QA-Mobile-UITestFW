@@ -21,6 +21,7 @@ namespace Todo.MobileUITest.Tests
         }
 
         [Test]
+        [Description("Create a simple Task, delete the task created and verify the task does not exist")]
         public void CreateAndDeleteTaskTest()
         {
             App
@@ -31,7 +32,7 @@ namespace Todo.MobileUITest.Tests
                 .TapOnSaveButtonAndGoToHome()
                 .TapOnPreviousTaskCreated("Task_Name")
                 .TapOnDeleteButtonAndGoToHome()
-                .Verify().YourRecentlyTaskIsShown();
+                .Verify().YourRecentlyTaskIsNOTShown("Task_Name");
         }
     }
 }

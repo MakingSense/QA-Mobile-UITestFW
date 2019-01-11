@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Todo.MobileUITest.Views.Common;
 using Todo.MobileUITest.Views.Task;
 
@@ -21,9 +22,13 @@ namespace Todo.MobileUITest.Views.Todo
             return new TaskView(AppUser);
         }
 
-        public TaskView TapOnPreviousTaskCreated(string taskName)
+        public TaskView TapOnPreviousTaskCreated(string name)
         {
-
+            App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
+                TimeSpan.FromSeconds(60));
+            var appResult = App.Query(Locate.TaskName).ToList();
+            var elem = appResult.FirstOrDefault(c => c.Text == name);
+            App.Tap(elem.Id);
             return new TaskView(AppUser);
         }
 
