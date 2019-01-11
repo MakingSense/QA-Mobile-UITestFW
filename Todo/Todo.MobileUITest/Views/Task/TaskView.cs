@@ -13,7 +13,7 @@ namespace Todo.MobileUITest.Views.Task
             Locate.CreateInstance(AppUser.Platform);
         }
 
-        public TaskView EnterTaskName(string name = "Test")
+        public TaskView EnterTaskName(string name = "Buy_orange")
         {
             App.WaitForElement(Locate.NameField, $"Timed out waiting for element {Locate.NameField}",
                TimeSpan.FromSeconds(60));
@@ -22,7 +22,7 @@ namespace Todo.MobileUITest.Views.Task
             return this;
         }
 
-        public TaskView EnterTaskNotes(string notes = "Test Notes")
+        public TaskView EnterTaskNotes(string notes = "Buy_orange_Notes")
         {
             App.ClearText(Locate.NotesField);
             App.EnterText(Locate.NotesField, notes);
