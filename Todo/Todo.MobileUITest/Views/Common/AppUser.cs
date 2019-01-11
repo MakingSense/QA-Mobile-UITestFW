@@ -25,7 +25,7 @@ namespace Todo.MobileUITest.Views.Common
             {
                 throw new Exception("A platform must be specified in App.config");
             }*/
-            return Platform.Android;
+            return Platform.iOS;
         }
     }
 }

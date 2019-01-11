@@ -44,5 +44,16 @@ namespace Todo.MobileUITest.Views.Todo
             Assert.IsTrue(list.Count().Equals(tasks.Count()));
             return this;
         }
+
+        public TodoViewChecker YourRecentlyTaskIsDone()
+        {
+            App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
+                TimeSpan.FromSeconds(60));
+            var appResult = App.Query(Locate.DoneTask).ToList();
+            var elem = appResult.First();
+            Assert.IsTrue(elem.Enabled);
+            return this;
+        }
+
     }
 }

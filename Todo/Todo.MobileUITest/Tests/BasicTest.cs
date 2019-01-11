@@ -68,7 +68,7 @@ namespace Todo.MobileUITest.Tests
                 .EnterTaskNotes()
                 .SwitchOnDone()
                 .TapOnSaveButtonAndGoToHome()
-                .Verify().YourRecentlyTaskIsShown();
+                .Verify().YourRecentlyTaskIsDone();
         }
     }
 }

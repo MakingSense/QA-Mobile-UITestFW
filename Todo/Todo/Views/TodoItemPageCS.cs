@@ -14,10 +14,11 @@ namespace Todo
 
 			var notesEntry = new Entry();
             notesEntry.SetBinding(Entry.TextProperty, "Notes");
-            notesEntry.AutomationId =" NotesField";
+            notesEntry.AutomationId = "NotesField";
 
 			var doneSwitch = new Switch();
 			doneSwitch.SetBinding(Switch.IsToggledProperty, "Done");
+            doneSwitch.AutomationId = "DoneToggle";
 
 			var saveButton = new Button { Text = "Save" , AutomationId = "SaveButton"};
 			saveButton.Clicked += async (sender, e) =>

@@ -31,9 +31,7 @@ namespace Todo.MobileUITest.Views.Task
 
         public TaskView SwitchOnDone()
         {
-            App.Repl();
-          //  App.ClearText(Locate.NotesField);
-          //  App.EnterText(Locate.NotesField, notes);
+            App.Tap(Locate.DoneSwitch);
             return this;
         }
 

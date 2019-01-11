@@ -47,6 +47,7 @@ namespace Todo
 						HorizontalOptions = LayoutOptions.End
 					};
 					tick.SetBinding(VisualElement.IsVisibleProperty, "Done");
+                    tick.AutomationId = "TaskDone";
 
 					var stackLayout = new StackLayout
 					{
