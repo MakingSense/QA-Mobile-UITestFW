@@ -22,10 +22,10 @@ namespace Todo.MobileUITest.Views.Task
             if (platform == Platform.Android)
             {
 
-                NameText = c => c.Id("NoResourceEntry-6");
-                NameField = c => c.Id("NoResourceEntry-7");
-                NotesText = c => c.Id("NoResourceEntry-8");
-                NotesField = c => c.Id("NoResourceEntry-9");
+                NameText = c => c.Marked("NameText_Container");
+                NameField = c => c.Marked("NameField_Container");
+                NotesText = c => c.Marked("NotesField_Container");
+                NotesField = c => c.Marked("NotesField_Container");
                 SaveButton = c => c.Marked("SaveButton_Container");
                 DeleteButton = c => c.Marked("DeleteButton_Container");
                 CancelButton = c => c.Marked("CancelButton_Container");

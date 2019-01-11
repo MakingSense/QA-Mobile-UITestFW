@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using Todo.MobileUITest.Views.Common;
 
 namespace Todo.MobileUITest.Tests
@@ -33,6 +34,27 @@ namespace Todo.MobileUITest.Tests
                 .TapOnPreviousTaskCreated("Task_Name")
                 .TapOnDeleteButtonAndGoToHome()
                 .Verify().YourRecentlyTaskIsNOTShown("Task_Name");
+        }
+
+        [Test]
+        [Description("Create a multiple Tasks and verify all tasks exist")]
+        public void CreateMultipleTaskTest()
+        {
+            App
+                .VisitTodoView()
+                .TapOnCreateTask()
+                .EnterTaskName("Task_1")
+                .EnterTaskNotes("Task_Notes_1")
+                .TapOnSaveButtonAndGoToHome()
+                .TapOnCreateTask()
+                .EnterTaskName("Task_2")
+                .EnterTaskNotes("Task_Notes_2")
+                .TapOnSaveButtonAndGoToHome()
+                .TapOnCreateTask()
+                .EnterTaskName("Task_3")
+                .EnterTaskNotes("Task_Notes_3")
+                .TapOnSaveButtonAndGoToHome()
+                .Verify().YourAllRecentlyTasksAreShown(new List<string> { "Task_1", "Task_2", "Task_3" });
         }
     }
 }
