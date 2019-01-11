@@ -56,5 +56,19 @@ namespace Todo.MobileUITest.Tests
                 .TapOnSaveButtonAndGoToHome()
                 .Verify().YourAllRecentlyTasksAreShown(new List<string> { "Task_1", "Task_2", "Task_3" });
         }
+
+        [Test]
+        [Description("Create a simple Task with DONE status and verify")]
+        public void CreateTaskDoneTest()
+        {
+            App
+                .VisitTodoView()
+                .TapOnCreateTask()
+                .EnterTaskName()
+                .EnterTaskNotes()
+                .SwitchOnDone()
+                .TapOnSaveButtonAndGoToHome()
+                .Verify().YourRecentlyTaskIsShown();
+        }
     }
 }

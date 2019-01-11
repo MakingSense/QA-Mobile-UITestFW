@@ -29,6 +29,14 @@ namespace Todo.MobileUITest.Views.Task
             return this;
         }
 
+        public TaskView SwitchOnDone()
+        {
+            App.Repl();
+          //  App.ClearText(Locate.NotesField);
+          //  App.EnterText(Locate.NotesField, notes);
+            return this;
+        }
+
         public TodoView TapOnSaveButtonAndGoToHome()
         {
             App.Tap(Locate.SaveButton);
