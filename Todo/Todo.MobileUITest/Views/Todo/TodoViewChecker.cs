@@ -49,9 +49,9 @@ namespace Todo.MobileUITest.Views.Todo
         {
             App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
                 TimeSpan.FromSeconds(60));
+            App.Repl();
             var appResult = App.Query(Locate.DoneTask).ToList();
-            var elem = appResult.First();
-            Assert.IsTrue(elem.Enabled);
+            Assert.IsTrue(appResult.Count() == 1);
             return this;
         }
 
