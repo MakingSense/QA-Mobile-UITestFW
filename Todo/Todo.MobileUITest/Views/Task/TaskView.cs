@@ -15,7 +15,7 @@ namespace Todo.MobileUITest.Views.Task
 
         public TaskView EnterTaskName(string name = "Test")
         {
-            App.WaitForElement(Locate.NameText, $"Timed out waiting for element {Locate.NameText}",
+            App.WaitForElement(Locate.NameField, $"Timed out waiting for element {Locate.NameField}",
                TimeSpan.FromSeconds(60));
             App.ClearText(Locate.NameField);
             App.EnterText(Locate.NameField, name);

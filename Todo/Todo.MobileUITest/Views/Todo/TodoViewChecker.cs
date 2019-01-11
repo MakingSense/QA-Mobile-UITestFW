@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using Todo.MobileUITest.Views.Common;
@@ -31,6 +32,16 @@ namespace Todo.MobileUITest.Views.Todo
             var appResult = App.Query(Locate.TaskName).ToList();
             var elem = appResult.FirstOrDefault(c => c.Text == name);
             Assert.IsTrue(elem == null);
+            return this;
+        }
+
+        public TodoViewChecker YourAllRecentlyTasksAreShown(List<string> tasks)
+        {
+            App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
+                TimeSpan.FromSeconds(60));
+            var appResult = App.Query(Locate.TaskName).ToList();
+            var list = appResult.Where(l => tasks.ToList().Contains(l.Text));
+            Assert.IsTrue(list.Count().Equals(tasks.Count()));
             return this;
         }
     }
