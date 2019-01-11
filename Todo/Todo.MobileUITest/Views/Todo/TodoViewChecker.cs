@@ -23,5 +23,15 @@ namespace Todo.MobileUITest.Views.Todo
             Assert.AreEqual(appResult.Text, name);
             return this;
         }
+
+        public TodoViewChecker YourRecentlyTaskIsNOTShown(string name = "Test")
+        {
+            App.WaitForElement(Locate.TasksList, $"Timed out waiting for element {Locate.TasksList}",
+                TimeSpan.FromSeconds(60));
+            var appResult = App.Query(Locate.TaskName).ToList();
+            var elem = appResult.FirstOrDefault(c => c.Text == name);
+            Assert.IsTrue(elem == null);
+            return this;
+        }
     }
 }

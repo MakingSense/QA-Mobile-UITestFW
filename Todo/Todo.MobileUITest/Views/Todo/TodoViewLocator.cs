@@ -17,8 +17,8 @@ namespace Todo.MobileUITest.Views.Todo
             {
 
                 AddButton = c => c.Id("NoResourceEntry-0");
-                TasksList = c => c.Id("NoResourceEntry-3");
-                TaskName = c => c.Id("TodoItemName");
+                TasksList = c => c.Marked("TodoList_Container");
+                TaskName = c => c.Marked("TodoItemName");
             }
             else
             {

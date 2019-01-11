@@ -26,9 +26,9 @@ namespace Todo.MobileUITest.Views.Task
                 NameField = c => c.Id("NoResourceEntry-7");
                 NotesText = c => c.Id("NoResourceEntry-8");
                 NotesField = c => c.Id("NoResourceEntry-9");
-                SaveButton = c => c.Id("NoResourceEntry-12");
-                DeleteButton = c => c.Id("NoResourceEntry-13");
-                CancelButton = c => c.Id("NoResourceEntry-14");
+                SaveButton = c => c.Marked("SaveButton_Container");
+                DeleteButton = c => c.Marked("DeleteButton_Container");
+                CancelButton = c => c.Marked("CancelButton_Container");
             }
             else
             {
