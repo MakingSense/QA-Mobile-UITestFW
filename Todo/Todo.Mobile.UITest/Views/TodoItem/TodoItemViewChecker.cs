@@ -1,5 +1,4 @@
-﻿using System;
-namespace Todo.Mobile.UITests.Views.TodoItem
+﻿namespace Todo.Mobile.UITests.Views.TodoItem
 {
     public class TodoItemViewChecker
     {

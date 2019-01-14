@@ -2,9 +2,8 @@
 
 namespace Todo.Mobile.UITests.Views.Common
 {
-    public class BasicViewChecker
+    public abstract class BasicViewChecker
     {
-
             protected BasicViewChecker(AppUser appUser)
             {
                 AppUser = appUser;
@@ -13,7 +12,6 @@ namespace Todo.Mobile.UITests.Views.Common
             public AppUser AppUser { get; }
 
             public IApp App => AppUser.App;
-
 
     }
 }

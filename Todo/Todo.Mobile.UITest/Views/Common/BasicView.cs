@@ -2,7 +2,7 @@
 
 namespace Todo.Mobile.UITests.Views.Common
 {
-    public class BasicView
+    public abstract class BasicView
     {
         protected BasicView(AppUser appUser)
         {
