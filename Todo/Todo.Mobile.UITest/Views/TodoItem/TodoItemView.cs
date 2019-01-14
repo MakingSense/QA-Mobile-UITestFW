@@ -31,7 +31,6 @@ namespace Todo.Mobile.UITests.Views.TodoItem
 
         public TodoItemView SwitchOnDone()
         {
-            App.Repl();
             App.Tap(Locate.DoneSwitch);
             return this;
         }
