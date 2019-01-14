@@ -1,10 +1,10 @@
 ﻿using Xamarin.UITest;
 
-namespace Todo.MobileUITest.Views.Common
+namespace Todo.Mobile.UITests.Views.Common
 {
-    public class BasicViewChecker
+    public abstract class BasicView
     {
-        protected BasicViewChecker(AppUser appUser)
+        protected BasicView(AppUser appUser)
         {
             AppUser = appUser;
         }
@@ -12,6 +12,5 @@ namespace Todo.MobileUITest.Views.Common
         public AppUser AppUser { get; }
 
         public IApp App => AppUser.App;
-
     }
 }

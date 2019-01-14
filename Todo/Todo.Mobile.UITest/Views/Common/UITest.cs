@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Todo.MobileUITest.Views.Common
+namespace Todo.Mobile.UITests.Views.Common
 {
     public class UITest
     {

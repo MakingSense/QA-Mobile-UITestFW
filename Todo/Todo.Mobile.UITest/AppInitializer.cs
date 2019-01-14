@@ -3,12 +3,12 @@ using System.IO;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace Todo.MobileUITest
+namespace Todo.Mobile.UITests
 {
 	public class AppInitializer
 	{
-        public static IApp StartApp(Platform platform)
-        {
+		public static IApp StartApp(Platform platform)
+		{
             switch (platform)
             {
                 case Platform.Android:
@@ -35,5 +35,5 @@ namespace Todo.MobileUITest
                     throw new ArgumentOutOfRangeException(nameof(platform), platform, null);
             }
         }
-    }
+	}
 }
