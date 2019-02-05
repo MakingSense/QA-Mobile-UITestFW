@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppInitializer.cs" />
+    <Compile Include="TestData\InputData.cs" />
     <Compile Include="Tests\BasicTest.cs" />
     <Compile Include="Views\Common\UITest.cs" />
     <Compile Include="Views\TodoList\TodoListView.cs" />
@@ -61,8 +62,6 @@
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\TodoItem\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
