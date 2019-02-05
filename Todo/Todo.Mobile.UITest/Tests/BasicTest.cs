@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using Todo.Mobile.UITests.TestData;
 using Todo.Mobile.UITests.Views.Common;
 
 namespace Todo.Mobile.UITests.Tests
@@ -32,6 +33,19 @@ namespace Todo.Mobile.UITests.Tests
                 .TapOnPreviousTaskCreated("Buy_apples")
                 .TapOnDeleteButtonAndGoToHome()
                 .Verify().YourRecentlyTaskIsNOTShown("Buy_apples");
+        }
+
+        [Test, TestCaseSource(typeof(InputData), "FormData")]
+        [Description("Create a multiple Tasks and verify all tasks exist")]
+        public void CreateMultipleTaskTest(string taskName, string taskNote)
+        {
+            App
+                .VisitTodoView()
+                .TapOnCreateTask()
+                .EnterTaskName(taskName)
+                .EnterTaskNotes(taskNote)
+                .TapOnSaveButtonAndGoToHome()
+                .Verify().YourRecentlyTaskIsShown(taskName);
         }
 
         [Test]
